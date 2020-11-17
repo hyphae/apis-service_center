@@ -11,7 +11,7 @@
 ## Documentation
 
 ## License
-&emsp;[Apache License Version 2.0](https://github.com/oes-github/apis-service_center/blob/master/LICENSE)
+&emsp;[Apache License Version 2.0](https://github.com/SonyCSL/apis-service_center/blob/main/LICENSE)
 
 
 ## Notice
