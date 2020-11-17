@@ -15,4 +15,4 @@
 
 
 ## Notice
-&emsp;[Notice](https://github.com/oes-github/apis-service_center/blob/master/NOTICE.md)
+&emsp;[Notice](https://github.com/SonyCSL/apis-service_center/blob/main/NOTICE.md)
