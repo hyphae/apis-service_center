@@ -1,0 +1,104 @@
+[
+	{
+		"model": "core.user",
+		"pk": 1,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$FahwQSsOmWUw$bJqSpSrKHPfoVdQhrGuqK0jA7w3oJEAtmWZqTkeD5BU=",
+			"is_superuser": true,
+			"username": "admin",
+			"first_name": "",
+			"last_name": "",
+			"email": "",
+			"is_staff": true,
+			"is_active": true,
+			"date_joined": "2020-04-01T00:00:00+09:00",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "core.user",
+		"pk": 2,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$cCXEdFMk92mU$XW+I1movpdDJH6qpHVl11Pf3XpTLETtaKVWnz4Dmex4=",
+			"is_superuser": false,
+			"username": "nonresident",
+			"first_name": "",
+			"last_name": "",
+			"email": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-04-01T00:00:00+09:00",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "core.user",
+		"pk": 3,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$EbSWcowhYyy0$E4b5i7pClwBnDF8W9sM8tewWGW1X0wg5fqAGG6bctWg=",
+			"is_superuser": false,
+			"username": "e001",
+			"first_name": "",
+			"last_name": "",
+			"email": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-04-01T00:00:00+09:00",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "core.user",
+		"pk": 4,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$b1oPq1JjtpiY$Ul3cISlJFeT4cq/Y39YYp63HGqBrnbrTTMMK8p1UJiU=",
+			"is_superuser": false,
+			"username": "e002",
+			"first_name": "",
+			"last_name": "",
+			"email": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-04-01T00:00:00+09:00",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "core.user",
+		"pk": 5,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$WGw7W44HGwPu$ziLTyoexb34nEWyFBUkzsq8ZvRWL/G5NxW9WRRVG5OI=",
+			"is_superuser": false,
+			"username": "e003",
+			"first_name": "",
+			"last_name": "",
+			"email": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-04-01T00:00:00+09:00",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "core.user",
+		"pk": 6,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$6kT3Kzq0yFs2$RDPCBaJuTW3m3sOJHr+DMjVBdxdRnpXyNX60Ee+mZ+Q=",
+			"is_superuser": false,
+			"username": "e004",
+			"first_name": "",
+			"last_name": "",
+			"email": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-04-01T00:00:00+09:00",
+			"groups": [],
+			"user_permissions": []
+		}
+	}
+]

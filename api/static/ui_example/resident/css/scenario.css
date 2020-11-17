@@ -1,0 +1,21 @@
+
+body {
+	background-color: #555;
+	color: #333;
+}
+
+#content {
+	background-color: white;
+}
+
+#table-available-scenarios .current {
+	background-color: greenyellow;
+}
+
+.detailView {
+	white-space: pre;
+}
+.detailView dd {
+	margin-left: 100px;
+	white-space: pre;
+}

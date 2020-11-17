@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<title>APIS DEAL</title>
+		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<link rel="stylesheet" type="text/css" href="./css/detailView.css">
+		<link rel="stylesheet" type="text/css" href="./css/deal.css">
+		<script src="//code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+		<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="/api/staff/client.js"></script>
+		<script type="text/javascript" src="./js/deal.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript" src="./js/detailView.js"></script>
+	</head>
+	<body>
+		<div id="content">
+			<div id="title" class="setting-opener">
+				APIS DEAL : <span class="community-name"></span> &gt; <span class="cluster-name"></span>
+			</div>
+			<div id="body">
+				<div id="input">
+					<input id="input-date" placeholder="YYYY-MM-DD" size="10">
+					<button id="button-aggregate">aggregate</button>
+				</div>
+				<div id="display">
+					<div>
+						<h2>summary</h2>
+						<div>amount total : <span id="sum-of-amount-kwh" class="summary-value"></span> [kWh]</div>
+						<div>aborted deals : <span id="number-of-aborted-deals" class="summary-value"></span> deals</div>
+						<div>scrammed deals : <span id="number-of-scrammed-deals" class="summary-value"></span> deals</div>
+						<button id="button-show-deals-dialog">detail...</button>
+					</div>
+					<div>
+						<h2>by hour</h2>
+						<div id="chart-amount-by-hour"></div>
+					</div>
+					<div>
+						<h2>by unit</h2>
+						<div id="chart-amount-by-unit"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="dialog-deal" style="display:none">
+			<div id="deal-detail" class="detailView"></div>
+		</div>
+		<div id="dialog-deals" style="display:none">
+			<table id="table-deals">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>discharge unit</th>
+						<th>charge unit</th>
+						<th>request type</th>
+						<th>request Wh</th>
+						<th>negotiate Wh</th>
+						<th>cumulate Wh</th>
+						<th>status</th>
+						<th>start datetime</th>
+						<th>stop datetime</th>
+						<th>action</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div id="dialog-login" style="display:none">
+			<div>username : <input id="login-username" type="text" size="16" /></div>
+			<div>password : <input id="login-password" type="password" size="16" /></div>
+		</div>
+		<div id="dialog-setting" style="display:none">
+			<div>community : <select id="select-community"></select></div>
+			<div>cluster : <select id="select-cluster"></select></div>
+			<div>display : <select id="select-display"></select></div>
+		</div>
+	</body>
+</html>

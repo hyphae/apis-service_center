@@ -1,0 +1,57 @@
+
+body {
+	background-color: #555;
+	color: #333;
+}
+
+#content {
+	background-color: white;
+}
+
+#display-jobs {
+	margin-left: auto;
+	margin-right: auto;
+}
+#display-jobs td {
+	font-size: 200%;
+	padding: 5px;
+}
+#display-jobs .action {
+	cursor: pointer;
+	cursor: hand;
+}
+#display-jobs .active {
+	color: green;
+}
+#display-jobs .inactive {
+	color: red;
+}
+#display-jobs .active .action .fa:before {
+	content: '\f205';
+}
+#display-jobs .inactive .action .fa:before {
+	content: '\f204';
+}
+#display-jobs .active .action:hover .fa:before {
+	content: '\f204';
+	opacity: 0.4;
+}
+#display-jobs .inactive .action:hover .fa:before {
+	content:'\f205';
+	opacity: 0.4;
+}
+
+.dataTable tbody td {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 200px;
+}
+
+.detailView {
+	white-space: pre;
+}
+.detailView dd {
+	margin-left: 100px;
+	white-space: pre;
+}

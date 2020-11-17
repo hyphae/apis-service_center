@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<title>APIS VISUAL</title>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans+Mono">
+		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<link rel="stylesheet" type="text/css" href="./css/visual.css">
+		<script src="//code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+		<script type="text/javascript" src="/api/resident/client.js"></script>
+		<script type="text/javascript" src="./js/visual-config.js"></script>
+		<script type="text/javascript" src="./js/visual-core.js"></script>
+		<script type="text/javascript" src="./js/visual.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+		<!--[if lt IE 9]>
+			<script type="text/javascript">
+				alert("Your browser does not support the canvas tag.");
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="content">
+			<div id="title" class="setting-opener">
+				APIS VISUAL : <span class="community-name"></span> &gt; <span class="cluster-name"></span> &gt; <span class="unit-name"></span>
+			</div>
+			<div id="body">
+				<canvas id="mainCanvas" width="1024" height="600" />
+			</div>
+		</div>
+		<div id="dialog-login" style="display:none">
+			<div>username : <input id="login-username" type="text" size="16" /></div>
+			<div>password : <input id="login-password" type="password" size="16" /></div>
+		</div>
+		<div id="dialog-setting" style="display:none">
+			<div>community : <select id="select-community"></select></div>
+			<div>cluster : <select id="select-cluster"></select></div>
+			<div>unit : <select id="select-unit"></select></div>
+			<div>display : <select id="select-display"></select></div>
+		</div>
+	</body>
+</html>

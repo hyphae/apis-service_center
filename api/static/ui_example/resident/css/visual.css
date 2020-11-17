@@ -1,0 +1,13 @@
+
+body {
+	background-color: #333;
+	color: #bbb;
+}
+
+#content {
+	background-color: #3d3d3d;
+}
+
+canvas {
+	outline: 0px;
+}

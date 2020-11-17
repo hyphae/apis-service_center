@@ -1,0 +1,8 @@
+[
+	{"model": "community.community", "pk": 1, "fields": {"code": "oss_community", "name": "OSS Community"}},
+	{"model": "community.cluster", "pk": 1, "fields": {"community": 1, "code": "oss_cluster", "name": "OSS Cluster"}},
+	{"model": "community.unit", "pk": 1, "fields": {"cluster": 1, "code": "E001", "name": "E001", "users": [1,3]}},
+	{"model": "community.unit", "pk": 2, "fields": {"cluster": 1, "code": "E002", "name": "E002", "users": [1,4]}},
+	{"model": "community.unit", "pk": 3, "fields": {"cluster": 1, "code": "E003", "name": "E003", "users": [1,5]}},
+	{"model": "community.unit", "pk": 4, "fields": {"cluster": 1, "code": "E004", "name": "E004", "users": [1,6]}}
+]

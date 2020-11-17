@@ -1,0 +1,13 @@
+
+body {
+	background-color: #888;
+	color: #333;
+}
+
+#content {
+	background-color: #bbb;
+}
+
+.summary-value {
+	font-size: 200%;
+}

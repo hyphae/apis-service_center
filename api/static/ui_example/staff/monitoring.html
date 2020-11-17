@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<title>APIS MONITORING</title>
+		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<link rel="stylesheet" type="text/css" href="./css/detailView.css">
+		<link rel="stylesheet" type="text/css" href="./css/monitoring.css">
+		<script src="//code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+		<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="/api/staff/client.js"></script>
+		<script type="text/javascript" src="./js/monitoring.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript" src="./js/detailView.js"></script>
+	</head>
+	<body>
+		<div id="content">
+			<div id="title" class="setting-opener">
+				APIS MONITORING : <span class="community-name"></span> &gt; <span class="cluster-name"></span>
+			</div>
+			<div id="body">
+				<div>
+					<h2>jobs</h2>
+					<div class="display-table">
+						<table id="display-jobs"></table>
+					</div>
+					<h2>open failures</h2>
+					<div class="display-table">
+						<table id="table-open-failures">
+							<thead>
+								<tr>
+									<th>detected</th>
+									<th>type</th>
+									<th>programId</th>
+									<th>unitId</th>
+									<th>description</th>
+									<th>action</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+				<div>
+					<h2>failures by date</h2>
+					<input id="input-period-from" placeholder="YYYY-MM-DD" size="10">
+					-
+					<input id="input-period-to" placeholder="YYYY-MM-DD" size="10">
+					<button id="button-aggregate">aggregate</button>
+					<div class="display-table">
+						<table id="table-failures">
+							<thead>
+								<tr>
+									<th>detected</th>
+									<th>closed</th>
+									<th>type</th>
+									<th>programId</th>
+									<th>unitId</th>
+									<th>description</th>
+									<th>action</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="dialog-failure" style="display:none">
+			<div id="failure-detail" class="detailView"></div>
+		</div>
+		<div id="dialog-login" style="display:none">
+			<div>username : <input id="login-username" type="text" size="16" /></div>
+			<div>password : <input id="login-password" type="password" size="16" /></div>
+		</div>
+		<div id="dialog-setting" style="display:none">
+			<div>community : <select id="select-community"></select></div>
+			<div>cluster : <select id="select-cluster"></select></div>
+			<div>display : <select id="select-display"></select></div>
+		</div>
+	</body>
+</html>
