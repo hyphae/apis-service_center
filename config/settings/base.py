@@ -92,36 +92,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
 }
-# app と DATABASES との対応表
-DATABASE_APPS_MAPPING = {
-    '*'          : 'default',
-   #'monitoring' : 'monitoring',
-   #'scenario'   : 'scenario',
-}
-# モデルとデータベースを対応づけるクラス
-DATABASE_ROUTERS = [
-    'config.routers.DatabaseRouter'
-]
-
-# MongoDB 用のデータベース設定
-MONGODB_DATABASES = {
-    'downtime' : {
-        'HOST': 'localhost',
-        'NAME': 'sc_downtime',
-    },
-    'unit_data' : {
-        'HOST': 'localhost',
-        'NAME': 'sc_test',
-    },
-    'deal' : {
-        'HOST': 'localhost',
-        'NAME': 'sc_test',
-    },
-    'apis_log' : {
-        'HOST': 'localhost',
-        'NAME': 'sc_log',
-    },
-}
 
 
 # Password validation
@@ -226,7 +196,7 @@ LOGGING = {
 			'level': 'WARNING',
 			'class': 'logging.FileHandler',
 			'formatter': 'file',
-			'filename': '/tmp/apis_service_center-warning.log',
+			'filename': '/tmp/apis-service_center-warning.log',
 		},
 		'mail_admins': {
 			'level': 'ERROR',
@@ -248,12 +218,34 @@ LOGGING = {
 	},
 }
 
+#### カスタム設定項目
+
+# MongoDB 用のデータベース設定
+MONGODB_DATABASES = {
+    'downtime' : {
+        'HOST': 'localhost',
+        'NAME': 'apis_service_center',
+    },
+    'unit_data' : {
+        'HOST': 'localhost',
+        'NAME': 'apis_service_center',
+    },
+    'deal' : {
+        'HOST': 'localhost',
+        'NAME': 'apis_service_center',
+    },
+    'apis_log' : {
+        'HOST': 'localhost',
+        'NAME': 'apis_service_center',
+    },
+}
+
 # downtime 集計処理の諸設定
 DOWNTIME = {
 	'initial_wait_sec': 5,
 	'interval_sec': 300,
 	'unit_data_fetch_limit': 1000,
-	'data_loss_tolerance_sec': 120,	# 実機:120, emulation:600
+	'data_loss_tolerance_sec': 600,	# 実機:120, emulation:600
 }
 
 # monitoring 処理の諸設定

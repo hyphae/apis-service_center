@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<script>
+			const url = location.href.replace('/static/api/resident/client_example.html', '/api/resident/client.js');
+			const script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = url;
+			const firstScript = document.getElementsByTagName('script')[0];
+			firstScript.parentNode.insertBefore(script, firstScript);
+		</script>
+		<script src="//code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script>$(function() {
+			let communityOutline = {};
+
+			const loadCommunityOutline = function() {
+				communityOutline = {};
+				client.community.outline(
+					function(json, textStatus) {
+						$('#message').val(textStatus);
+						communityOutline = json;
+					},
+					function(jqXHR, textStatus, errorThrown) {
+						$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+					},
+					function(jqXHR, textStatus) {
+						updateCommunityList();
+						updateClusterList();
+						updateUnitList();
+					},
+				);
+			};
+			const parseDate = function(val) {
+				if (!val) return null;
+				const a = val.split('-');
+				if (a.length == 3) {
+					const result = new Date(a[0], a[1] - 1, a[2]);
+					if (!isNaN(result.getTime())) return result;
+					alert(result + ' : ' + val);
+					throw new Error(result + ' : ' + val);
+				}
+				alert('illegal date format : ' + val);
+				throw new Error('illegal date format : ' + val);
+			};
+
+			const selectedCommunityId = function() { return $('#select-community').val(); };
+			const selectedClusterId = function() { return $('#select-cluster').val(); };
+			const selectedUnitId = function() { return $('#select-unit').val(); };
+
+			const updateCommunityList = function() {
+				const selectCommunity = $('#select-community');
+				selectCommunity.empty().append('<option value="">--</option>');
+				for (const id in communityOutline.communities) {
+					console.log('community', id);
+					aCommunity = communityOutline.communities[id]
+					selectCommunity.append('<option value="' + aCommunity.id + '">' + aCommunity.name + '</option>');
+				}
+				updateClusterList();
+			};
+			const updateClusterList = function() {
+				const selectCluster = $('#select-cluster');
+				selectCluster.empty().append('<option value="">--</option>');
+				const theCommunityId = selectedCommunityId();
+				if (theCommunityId) {
+					for (const id in communityOutline.communities[theCommunityId].clusters) {
+						console.log('cluster', id);
+						aCluster = communityOutline.communities[theCommunityId].clusters[id]
+						selectCluster.append('<option value="' + aCluster.id + '">' + aCluster.name + '</option>');
+					}
+				}
+				updateUnitList();
+			};
+			const updateUnitList = function() {
+				const selectUnit = $('#select-unit');
+				selectUnit.empty().append('<option value="">--</option>');
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				if (theCommunityId && theClusterId) {
+					for (const id in communityOutline.communities[theCommunityId].clusters[theClusterId].units) {
+						console.log('unit', id);
+						aUnit = communityOutline.communities[theCommunityId].clusters[theClusterId].units[id]
+						selectUnit.append('<option value="' + aUnit.id + '">' + aUnit.name + '</option>');
+					}
+				}
+			};
+
+			const getUnitData = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				if (theCommunityId && theClusterId, theUnitId) {
+					client.unitData.latestSet(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+			const getLiveDeal = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				const formatType = $('#select-deal-format-type').val();
+				if (theCommunityId && theClusterId, theUnitId) {
+					client.deal.liveList(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						formatType,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+			const getDealDatetimeRange = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				if (theCommunityId && theClusterId && theUnitId) {
+					client.deal.datetimeRange(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+			const getSumOfCumulateAmountWhsByHour = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				if (theCommunityId && theClusterId && theUnitId) {
+					client.deal.sumOfCumulateAmountWhsByHour(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+			const getDeal = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				const from = $('#input-deal-from').val();
+				const to = $('#input-deal-to').val();
+				const formatType = $('#select-deal-format-type').val();
+				if (theCommunityId && theClusterId && theUnitId) {
+					const fromDate = parseDate(from);
+					const toDate = parseDate(to);
+					if (toDate) toDate.setDate(toDate.getDate() + 1);
+					client.deal.list(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						fromDate,
+						toDate,
+						formatType,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+			const scenarioAvailableList = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				if (theCommunityId && theClusterId && theUnitId) {
+					client.scenario.availableList(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+			const scenarioCurrent = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				if (theCommunityId && theClusterId && theUnitId) {
+					client.scenario.current(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+			const scenarioChoose = function() {
+				const theCommunityId = selectedCommunityId();
+				const theClusterId = selectedClusterId();
+				const theUnitId = selectedUnitId();
+				if (theCommunityId && theClusterId && theUnitId) {
+					const theScenarioId = $('#input-scenario-id').val();
+					client.scenario.choose(
+						theCommunityId,
+						theClusterId,
+						theUnitId,
+						theScenarioId,
+						function(json, textStatus) {
+							$('#message').val(textStatus);
+							$('#result').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+						},
+						function(jqXHR, textStatus, errorThrown) {
+							$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+						},
+					);
+				}
+			};
+
+
+			const login = function() {
+				const username = window.prompt('username', '');
+				if (username) {
+					const password = window.prompt('password', '');
+					if (password) {
+						client.login(
+							username,
+							password,
+							function(json, textStatus) {
+								$('#message').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+								loadCommunityOutline();
+							},
+							function(jqXHR, textStatus, errorThrown) {
+								$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+							},
+						);
+					}
+				}
+			};
+			const logout = function() {
+				client.logout(
+					function(json, textStatus) {
+						$('#message').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+					},
+					function(jqXHR, textStatus, errorThrown) {
+						$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+					},
+				);
+			};
+			const getSession = function() {
+				client.session(
+					function(json, textStatus) {
+						$('#message').val(textStatus + '\n' + JSON.stringify(json, null, '\t'));
+					},
+					function(jqXHR, textStatus, errorThrown) {
+						$('#message').val(textStatus + '\n' + errorThrown + '\n' + JSON.stringify(jqXHR, null, '\t'));
+					},
+				);
+			};
+
+			$('#button-login').click(login);
+			$('#button-session').click(getSession);
+			$('#button-logout').click(logout);
+			$('#select-community').change(updateClusterList);
+			$('#select-cluster').change(updateUnitList);
+
+			$('#button-unitData').click(getUnitData);
+			$('#button-deal-datetimeRange').click(getDealDatetimeRange);
+			$('#button-deal-sumOfCumulateAmountWhsByHour').click(getSumOfCumulateAmountWhsByHour);
+			$('#button-deal-live').click(getLiveDeal);
+			$('#button-deal').click(getDeal);
+			$('#button-scenario-availableList').click(scenarioAvailableList);
+			$('#button-scenario-current').click(scenarioCurrent);
+			$('#button-scenario-choose').click(scenarioChoose);
+
+			loadCommunityOutline();
+		});</script>
+	</head>
+	<body>
+		<button id="button-session">session</button>
+		<button id="button-login">login</button>
+		<button id="button-logout">logout</button>
+		<br>
+		<br>
+		<textarea id="message" rows="15" cols="50" readonly="readonly"></textarea>
+		<hr>
+		community : <select id="select-community"></select>
+		cluster : <select id="select-cluster"></select>
+		unit : <select id="select-unit"></select>
+		<br>
+		<button id="button-unitData">latest unitData</button>
+		<br>
+		<button id="button-deal-datetimeRange">dealDatetimeRange</button>
+		<button id="button-deal-sumOfCumulateAmountWhsByHour">sumOfCumulateAmountWhsByHour</button>
+		<select id="select-deal-format-type"><option>raw</option><option>budo</option></select>
+		<button id="button-deal-live">live deal</button>
+		<input id="input-deal-from" type="text" placeholder="yyyy-mm-dd">
+		-
+		<input id="input-deal-to" type="text" placeholder="yyyy-mm-dd">
+		<button id="button-deal">deal</button>
+		<br>
+		<button id="button-scenario-availableList">scenario:availableList</button>
+		<button id="button-scenario-current">scenario:current</button>
+		<input id="input-scenario-id" type="text" placeholder="scenarioId">
+		<button id="button-scenario-choose">scenario:choose</button>
+		<br>
+		<br>
+		<textarea id="result" rows="15" cols="50" readonly="readonly"></textarea>
+	</body>
+</html>
+
