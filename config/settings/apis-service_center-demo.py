@@ -9,18 +9,22 @@ from .base import *
 MONGODB_DATABASES = {
     'downtime' : {
         'HOST': 'localhost',
+        'PORT': 27018,
         'NAME': 'apis_demo',
     },
     'unit_data' : {
         'HOST': 'localhost',
+        'PORT': 27018,
         'NAME': 'apis_demo',
     },
     'deal' : {
         'HOST': 'localhost',
+        'PORT': 27018,
         'NAME': 'apis_demo',
     },
     'apis_log' : {
         'HOST': 'localhost',
+        'PORT': 27018,
         'NAME': 'apis_demo',
     },
 }

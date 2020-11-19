@@ -224,22 +224,18 @@ LOGGING = {
 MONGODB_DATABASES = {
     'downtime' : {
         'HOST': 'localhost',
-        'PORT': 27018,
         'NAME': 'apis_service_center',
     },
     'unit_data' : {
         'HOST': 'localhost',
-        'PORT': 27018,
         'NAME': 'apis_service_center',
     },
     'deal' : {
         'HOST': 'localhost',
-        'PORT': 27018,
         'NAME': 'apis_service_center',
     },
     'apis_log' : {
         'HOST': 'localhost',
-        'PORT': 27018,
         'NAME': 'apis_service_center',
     },
 }
