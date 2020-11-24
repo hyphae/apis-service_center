@@ -73,19 +73,19 @@ $(function () {
 			let html = '';
 			for (const aJob of jobs) {
 				const isActive = (aJob.isActive) ? 'active' : 'inactive';
+				const checked = (aJob.isActive) ? ' checked' : '';
 				html += '<tr class="' + isActive + '">';
 				html += '<td class="type">' + aJob.type + '</td>';
-				html += '<td class="action"><i class="fa fa-lg" aria-hidden="true"></i></td>';
+				html += '<td class="action"><input data-type="' + aJob.type + '" type="checkbox"' + checked + '></td>';
 				html += '</tr>';
 			}
 			$('#display-jobs').empty().append(html);
-			// ボタン表示に監視処理の ON/OFF 処理を仕込む
-			$('#display-jobs .action').off('click').on('click', function() {
-				const tr = $(this).closest('tr');
-				const type = tr.children('td.type').text();
-				const isActive = tr.attr('class');
+			// チェックボックスに監視処理の ON/OFF 処理を仕込む
+			$('#display-jobs .action input:checkbox').off('change').on('change', function() {
+				const type = $(this).data('type');
+				const isActive = $(this).prop('checked');
 				// isActive に応じて呼び出すサーバ処理を選び...
-				const func = (isActive == 'active') ? client.monitoring.job.deactivate : client.monitoring.job.activate;
+				const func = (isActive) ? client.monitoring.job.activate : client.monitoring.job.deactivate;
 				// 処理を呼び出す
 				func(
 					communityId,
