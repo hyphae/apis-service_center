@@ -1,4 +1,5 @@
 import logging, datetime
+import dateutil.parser
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +24,8 @@ def pymongo_result_conv(value):
 	"""
 	if isinstance(value, datetime.datetime):
 		if value.utcoffset() is None:
-			return datetime.datetime.fromisoformat(value.isoformat() + '+00:00')
+			# return datetime.datetime.fromisoformat(value.isoformat() + '+00:00')
+			return dateutil.parser.isoparse(value.isoformat() + 'Z')
 		else:
 			logger.warning('######## datetime is aware !!!')
 			return value
@@ -38,8 +40,6 @@ def pymongo_result_conv(value):
 def parse_iso8601_extended(value):
 	"""ISO8601 形式の日時文字列をパースする
 
-	Python はタイムゾーン記号 Z を認識してくれないので Z を +00:00 に置換して渡す.
-
 	Args:
 		value (str): ISO8601 形式の日時文字列
 
@@ -51,7 +51,8 @@ def parse_iso8601_extended(value):
 		None: if value is None
 	"""
 	if value:
-		return datetime.datetime.fromisoformat(value.replace('Z', '+00:00'))
+		# return datetime.datetime.fromisoformat(value.replace('Z', '+00:00'))
+		return dateutil.parser.isoparse(value)
 	return None
 
 def parse_iso8601_extended_timezone(value):
