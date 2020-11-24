@@ -252,12 +252,12 @@ DOWNTIME = {
 MONITORING = {
 	'initial_wait_sec': 5,
 	'interval_sec': {
-		'apis_main_alive': 10,	# 運用:300
-		'apis_ccc_alive': 10,
-		'grid_master_alive': 10,
-		'apis_main_severe': 10,
-		'apis_ccc_severe': 10,
-		'apis_log_severe': 10,
+		'apis_main_alive': 60,	# 運用:300
+		'apis_ccc_alive': 60,
+		'grid_master_alive': 60,
+		'apis_main_severe': 60,
+		'apis_ccc_severe': 60,
+		'apis_log_severe': 60,
 	},
 	'thread_blocking_limit_msec': 300000,
 	'notify_from': 'nobody@example.com',
