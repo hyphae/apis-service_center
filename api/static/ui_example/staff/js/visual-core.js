@@ -623,7 +623,7 @@ function initVisual(theCanvas) {
 	oesNode.x = w / 2;
 	oesNode.posx = w / 2;
 	oesNode.posy = h / 2;
-	ctx.font = '12px Droid Sans Mono';
+	ctx.font = '11px Verdana';
 
 	lastPulse = -1;
 	latestGlobalUpdate = -1;

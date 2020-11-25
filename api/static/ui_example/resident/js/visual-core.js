@@ -787,8 +787,7 @@ function initVisual(theCanvas, theUnitId) {
 	oesNode.x = w / 2;
 	oesNode.posx = w / 2;
 	oesNode.posy = h / 2;
-	ctx.font = '12px Droid Sans Mono';
-	//ctx.font = '12px Verdana';
+	ctx.font = '11px Verdana';
 
 	unitId = theUnitId;
 
