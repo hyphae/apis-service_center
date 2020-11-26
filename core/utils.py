@@ -24,8 +24,7 @@ def pymongo_result_conv(value):
 	"""
 	if isinstance(value, datetime.datetime):
 		if value.utcoffset() is None:
-			# return datetime.datetime.fromisoformat(value.isoformat() + '+00:00')
-			return dateutil.parser.isoparse(value.isoformat() + 'Z')
+			return value.replace(tzinfo=datetime.timezone.utc)
 		else:
 			logger.warning('######## datetime is aware !!!')
 			return value
