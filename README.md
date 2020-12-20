@@ -9,6 +9,7 @@ Service Center is a Web application that provides information required by the ad
 ## Installation
 
 Here is how to install apis-service_center individually.   
+apis-ccc, apis-log and mongdb are required.
 
 ```bash
 $ git clone https://github.com/SonyCSL/apis-service_center.git
