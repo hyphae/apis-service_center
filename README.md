@@ -24,7 +24,6 @@ Here is how to run apis-service_center individually.
 
 ```bash
 $ cd apis-service_center
-$ . venv/bin/activate
 $ sh start.sh
 ```
 Go to "0.0.0.0:10000/" in Web browser.
