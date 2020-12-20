@@ -27,7 +27,7 @@ Here is how to run apis-service_center individually.
 $ cd apis-service_center
 $ sh start.sh
 ```
-http://127.0.0.1:8000/static/ui_example/staff/visual.html
+http://127.0.0.1:8000/static/ui_example/staff/visual.html  
 account/password = oes/oes
 
 
