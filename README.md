@@ -8,9 +8,35 @@ Service Center is a Web application that provides information required by the ad
 
 ## Installation
 
+Here is how to install apis-service_center individually.   
+
+```bash
+$ git clone https://github.com/SonyCSL/apis-service_center.git
+$ cd apis-service_enter
+$ sh venv.sh
+$ sh initdb.sh
+$ deactivate
+```
+
 ## Running
 
+Here is how to run apis-service_center individually.  
+
+```bash
+$ cd apis-service_center
+$ . venv/bin/activate
+$ python3 start.py
+```
+Go to "0.0.0.0:10000/" in Web browser.
+
 ## Stopping
+Here is how to stop apis-service_center individually.  
+
+```bash
+$ cd apis-service_center
+$ bash stop.sh
+$ deactivate
+```
 
 ## Documentation
 
