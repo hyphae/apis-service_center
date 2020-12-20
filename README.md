@@ -26,7 +26,9 @@ Here is how to run apis-service_center individually.
 $ cd apis-service_center
 $ sh start.sh
 ```
-Go to "0.0.0.0:10000/" in Web browser.
+http://127.0.0.1:8000/static/ui_example/staff/visual.html
+account/password = oes/oes
+
 
 ## Stopping
 Here is how to stop apis-service_center individually.  
