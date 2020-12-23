@@ -174,6 +174,7 @@ http://127.0.0.1:8000/static/ui\_example/staff/availability.html
 ![](media/media/image9.png)  
 Figure 4-6
 <br>
+<br>
 Clicking on the “Details” button on the right side of each unit line displays the individual information for that unit (Figure 4-7).
 
 ![](media/media/image10.png)  
@@ -193,9 +194,11 @@ http://127.0.0.1:8000/static/ui\_example/staff/deal.html
 ![](media/media/image12.png)  
 Figure 4-8
 <br>
+<br>
 Clicking on the “Details” button below the summary brings up energy sharing information as shown in Figure 4-9.  
 ![](media/media/image13.png)  
 Figure 4-9
+<br>
 <br>
 Clicking on the “Details” button to the right of each line of energy sharing information displays more information on that transaction (Figure 4-10).  
 ![](media/media/image14.png)  
@@ -216,6 +219,7 @@ Figure 4-11
 <br>
 ![](media/media/image16.png)  
 Figure 4-12  
+<br>
 <br>
 Clicking on the “Details” button to the right of each line of failure information displays more information on that failure (Figure 4-13).
 ![](media/media/image17.png)  
@@ -275,10 +279,12 @@ http://127.0.0.1:8000/static/ui\_example/resident/deal.html
 ![](media/media/image21.png)  
 Figure 4-17  
 <br>
+<br>
 Clicking on the “Details” button below the summary brings up energy sharing information as shown in Figure 4-18.  
 ![](media/media/image22.png)  
 Figure 4-18  
 <br>
+<br> 
 Clicking on the “Details” button to the right of each line of energy sharing information displays more information on that transaction (Figure 4-19).  
 ![](media/media/image23.png)  
 Figure 4-19
@@ -295,6 +301,7 @@ http://127.0.0.1:8000/static/ui\_example/resident/scenario.html
 
 ![](media/media/image24.png)  
 Figure 4-20
+<br>
 <br>
 To choose a scenario, click on the “Choose” button on the right side of the line for that scenario. Clicking on the “Detail” button allows the user to check the JSON file for the scenario (Figure 4-21). (For information on the scenario JSON files, refer to the apis-main Specification Document.)
 
@@ -1180,7 +1187,7 @@ Access 127.0.0.1:8000/admin to bring up the Django administration screen shown b
 ![](media/media/image26.png)  
 Figure 6-1
 <br>
-
+<br>
 “Groups” under “AUTHENTIFICATION AND AUTHORIZATION” is the default setting for Django and enables various restriction on access to each type of data. For this Service Center, however, use of that function is not assumed.  
 To register a new community, select “Communities” under “COMMUNNITY” to bring up the screen shown below and then enter the appropriate information as described below.  
 &emsp;For “Code:” enter the same “communityId” as is specified in the config.json file for apis-main.    
@@ -1189,7 +1196,7 @@ To register a new community, select “Communities” under “COMMUNNITY” to 
 ![](media/media/image27.png)  
 Figure 6-2
 <br>
-
+<br>
 To register a new cluster, select “Clusters” under “COMMUNNITY” to bring up the screen shown below and then enter the appropriate information as described below.  
 &emsp;For “Community:”, select the name of a community created with “Communities”.  
 &emsp;For “Code:”, enter the same “clusterId” as is specified in the config.json file for apis-main.  
@@ -1198,7 +1205,7 @@ To register a new cluster, select “Clusters” under “COMMUNNITY” to bring
 ![](media/media/image28.png)  
 Figure 6-3
 <br>
-
+<br>
 To register a new unit, select “Units” under “COMMUNNITY” to bring up the screen shown below and then enter the appropriate information as described below.  
 &emsp;For “Cluster:”, select the name of a cluster created with “Clusters”.  
 &emsp;For “Code:”, enter the same “unitId” as is specified in the config.json file for apis-main.  
@@ -1213,7 +1220,7 @@ To register a new unit, select “Units” under “COMMUNNITY” to bring up th
 ![](media/media/image29.png)  
 Figure 6-4
 <br>
-
+<br>
 To register a new administrator or user, select “Users” under “CORE” to bring up the screen shown below and then enter the appropriate information as described below.  
 &emsp;Username: Enter freely.  
 &emsp;Password: Enter freely.
@@ -1221,14 +1228,14 @@ To register a new administrator or user, select “Users” under “CORE” to 
 ![](media/media/image30.png)  
 Figure 6-5
 <br>
-
+<br>
 When finished, click on the “SAVE” button to bring up the screen shown below.  
 To create an administrator account, check the “Staff status” item.  
 
 ![](media/media/image31.png)  
 Figure 6-6
 <br>
-
+<br>
 To register a new email address for notification of failures within a community, select “Community Setting” under “MONITORING” to bring up the screen shown below.  
 &emsp;For “Community Id:”, select a community code that was created with “Communities”.  
 &emsp;For “Notify to:”, enter an email address at which to receive notification of failures.  
@@ -1236,13 +1243,13 @@ To register a new email address for notification of failures within a community,
 ![](media/media/image32.png)  
 Figure 6-7
 <br>
-
+<br>
 To view a list of failures, select “Failures” under “MONITORING” to bring up the screen shown below. It is possible to display all of the failure information for all communities and all clusters at one time, but considering the huge amount of data, filtering as shown below is available.
 
 ![](media/media/image33.png)  
 Figure 6-8
 <br>
-
+<br>
 To display a list of failures, select “Job settings” under “MONITORING” to bring up the screen shown below, which enables you to set registered job functions such as alive processing and failure detection on or off. This is the same as the ON/OFF function that can be accessed at the following URL.  
 
 http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
@@ -1250,7 +1257,7 @@ http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
 ![](media/media/image34.png)  
 Figure 6-9
 <br>
-
+<br>
 To select a scenario for each unit, select “Choices” under “SCENARIO” to bring up the screen shown below.  
 &emsp;For “Community Id:”, select the code of a community that was created with “Communities”.  
 &emsp;For “Cluster Id:”, enter the code of a cluster that was created with “Communities”.  
@@ -1261,13 +1268,13 @@ To select a scenario for each unit, select “Choices” under “SCENARIO” to
 ![](media/media/image35.png)  
 Figure 6-10
 <br>
-
+<br>
 To register a new scenario, select “Scenarios” under “SCENARIO” to bring up the screen shown below.
 
 ![](media/media/image36.png)  
 Figure 6-11
 <br>
-
+<br>
 Click on the “ADD SCENARIO” button to bring up the screen shown below.  
 &emsp;For “Community Id:”, select the code of a community that was created with “Communities”. (\*1)  
 &emsp;For “Cluster Id:”, enter the code of a cluster that was created with “Communities”. (\*1)  
