@@ -222,9 +222,11 @@ http://127.0.0.1:8000/static/ui\_example/staff/deal.html
 ![](media/media/image12.png)  
 図4-8
 <br>
+<br>
 Summaryの下にある“detail”ボタンを押下することでより図4-9に示すように各電力融通の情報が列挙される。  
 ![](media/media/image13.png)  
 図4-9
+<br>
 <br>
 さらに各電力融通の横に表示される”detail” ボタンを押下することで図4-10に示すように、その取引の詳細が表示される。  
 ![](media/media/image14.png)
@@ -243,8 +245,10 @@ http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
 ![](media/media/image15.png)  
 図4-11
 <br>
+<br>
 ![](media/media/image16.png)  
 図4-12
+<br>
 <br>
 さらに各障害の横に表示される”detail” ボタンを押下することで図4-13に示すように、その障害の詳細が表示される。  
 ![](media/media/image17.png)  
@@ -299,9 +303,11 @@ http://127.0.0.1:8000/static/ui\_example/resident/deal.html
 ![](media/media/image21.png)  
 図4-17
 <br>
+<br>
 Summaryの下にある“detail”ボタンを押下することでより図4-18に示すように各電力融通の情報が列挙される。  
 ![](media/media/image22.png)  
 図4-18
+<br>
 <br>
 さらに各電力融通の横に表示される”detail” ボタンを押下することで図4-19に示すように、その取引の詳細が表示される。  
 ![](media/media/image23.png)  
@@ -319,6 +325,7 @@ http://127.0.0.1:8000/static/ui\_example/resident/scenario.html
 
 ![](media/media/image24.png)  
 図4-20
+<br>
 <br>
 Scenarioを選択するためには各Scenario横の”choose” ボタンを押下することで選択できる。”detail” ボタンを押下することで図4-21に示すようにScenarioのJSONファイルを確認することが可能である。(ScenarioのJSONファイルの情報についてはapis-main仕様書参照)
 ![](media/media/image25.png)  
@@ -1185,7 +1192,7 @@ Django フレームワーク自動生成のファイル。中身は空。
 
 <br>
 
-# 　**6. Service Centerへの各種登録**
+# **6. Service Centerへの各種登録**
 
 Community, Cluster, UnitやUserのService Centerへの登録方法について説明する。  
 127.0.0.1:8000/adminに アクセスすると以下のDjango administration画面が表示される。  
@@ -1193,7 +1200,7 @@ Community, Cluster, UnitやUserのService Centerへの登録方法について�
 ![](media/media/image26.png)  
 図6-1
 <br>
-
+<br>
 “AUTHENTIFICATION AND AUTHORIZATION” の “Groups”はDjangoのDefault設定で各Dataに対してアクセス制限を設定できるが、本Service Centerではこの機能の利用を想定していない。  
 新規のCommunityを登録するために“COMMUNNITY” の”Communities”を選択すると以下画面が表示される。それぞれ適切に入力する。  
 Code : apis-mainのconfig.jsonの”communityId” と同じを入力する。  
@@ -1202,7 +1209,7 @@ Name : 自由に入力する。
 ![](media/media/image27.png)  
 図6-2  
 <br>
-
+<br>
 新規のClusterを登録するために“COMMUNNITY” の”Clusters”を選択すると以下画面が表示される。それぞれ適切に入力する。  
 &emsp;Community : “Communities”で作成したCommunity の“Name”を選択する。  
 &emsp;Code : apis-mainのconfig.jsonの”clusterId” と同じを入力する。  
@@ -1211,7 +1218,7 @@ Name : 自由に入力する。
 ![](media/media/image28.png)  
 図6-3  
 <br>
-
+<br>
 新規のUnitを登録するために“COMMUNNITY” の”Units”を選択すると以下画面が表示される。それぞれ適切に入力する。  
 &emsp;Cluster : “Clusters”で作成したClusterの”Name”を選択する。  
 &emsp;Code : apis-mainのconfig.jsonの”unitId” と同じに設定する。  
@@ -1226,7 +1233,7 @@ Name : 自由に入力する。
 ![](media/media/image29.png)  
 図6-4
 <br>
-
+<br>
 新規の管理者やユーザを登録するために“CORE” の”Users”を選択すると以下画面が表示される。それぞれ適切に入力する。  
 &emsp;Username : 自由に入力する。  
 &emsp;Password : 自由に入力する。
@@ -1234,14 +1241,14 @@ Name : 自由に入力する。
 ![](media/media/image30.png)  
 図6-5
 <br>
-
+<br>
 その後”SAVE” ボタンを押下すると以下の画面が表示される。  
 登録アカウントが管理者の場合は “Staff status”　にチェックを入れる。  
 
 ![](media/media/image31.png)  
 図6-6
 <br>
-
+<br>
 新規でCommunity内で障害が発生した場合のメールの通知先を登録する場合は　”MONITORING” の “Community Setting”を選択すると以下の画面が表示される。  
 &emsp;Community Id : “Communities”で作成したCommunity の”Code”を選択する。  
 &emsp;Notify to : 障害が発生した際のメールの通知先を入力する。
@@ -1249,13 +1256,13 @@ Name : 自由に入力する。
 ![](media/media/image32.png)  
 図6-7
 <br>
-
+<br>
 障害一覧を参照したい場合は”MONITORING” の “Failures”を選択すると以下の画面が表示される。全Community, 全Clusterの障害情報を一括で表示可能である。膨大な量になる恐れがあるため以下のようにFilter機能がある。
 
 ![](media/media/image33.png)  
 図6-8
 <br>
-
+<br>
 障害一覧を参照したい場合は”MONITORING” の “Job settings”を選択すると以下の画面が表示される。  
 こちらは登録されている死活監視や障害検知などのJob機能のON/OFFを設定する。  
 以下でアクセスできるON/OFF機能と同等である。  
@@ -1264,7 +1271,7 @@ http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
 ![](media/media/image34.png)  
 図6-9
 <br>
-
+<br>
 Unit毎にScenarioを選択する場合は ”SCENARIO”の “Choices ”を選択すると以下の画面が表示される。  
 &emsp;Community Id : “Communities”で作成したCommunityの”Code”を入力する。  
 &emsp;Cluster Id : “Clusters”で作成した Clusterの“Code”を入力する。  
@@ -1275,13 +1282,13 @@ Unit毎にScenarioを選択する場合は ”SCENARIO”の “Choices ”を�
 ![](media/media/image35.png)  
 図6-10
 <br>
-
+<br>
 新規でScenarioを登録する場合は “SCENARIO”の “Scenarios”を選択すると以下の画面が表示される。
 
 ![](media/media/image36.png)  
 図6-11
 <br>
-
+<br>
 “ADD SCENARIO”ボタンを押下すると以下の画面が表示される。  
 &emsp;Community Id : “Communities”で作成したCommunityの”Code”を選択する。(※1)  
 &emsp;Cluster Id : “Clusters”で作成した Clusterの“Code”を選択する。(※1)  
