@@ -28,7 +28,7 @@ $ cd apis-service_center
 $ sh start.sh
 ```
 http://127.0.0.1:8000/static/ui_example/staff/visual.html  
-account/password = oes/oes
+account/password = admin/admin
 
 
 ## Stopping
@@ -40,7 +40,10 @@ $ bash stop.sh
 $ deactivate
 ```
 
+<a id="anchor1"></a>
 ## Documentation
+&emsp;[apis-service_center_specification(EN)](https://github.com/SonyCSL/apis-service_center/blob/main/doc/en/apis-service_center_specification_EN.md)  
+&emsp;[apis-service_center_specification(JP)](https://github.com/SonyCSL/apis-service_center/blob/main/doc/jp/apis-service_center_specification_JP.md)
 
 ## License
 &emsp;[Apache License Version 2.0](https://github.com/SonyCSL/apis-service_center/blob/main/LICENSE)
