@@ -188,7 +188,7 @@ DEAL displays the energy sharing history. When a date (E.g.: ”2020-01-01”) i
 
 The Service Center example can be downloaded from GitHub using the following URL.
 
-http://127.0.0.1:8000/static/ui\_example/staff/deal.html
+http://127.0.0.1:8000/static/ui_example/staff/deal.html
 
 ![](media/media/image11.png)  
 ![](media/media/image12.png)  
