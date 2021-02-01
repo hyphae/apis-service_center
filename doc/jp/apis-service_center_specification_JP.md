@@ -240,7 +240,7 @@ MONITORINGは図4-11、図4-12で示すようにCluster内のapis-main, apis-ccc
 
 githubからDownload可能なService Centerでは以下のURLでアクセス可能である。
 
-http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
+http://127.0.0.1:8000/static/ui_example/staff/monitoring.html
 
 ![](media/media/image15.png)  
 図4-11
