@@ -183,7 +183,7 @@ VISUALは電力融通及び各Unitの状態をリアルタイムに表示する�
 
 githubからDownload可能なService Centerでは以下のURLでアクセス可能である。
 
-http://127.0.0.1:8000/static/ui\_example/staff/visual.html
+http://127.0.0.1:8000/static/ui_example/staff/visual.html
 
 ![](media/media/image8.png)  
 図4-5
@@ -198,7 +198,7 @@ AVAILABILITYはCluster内の全Unitの平均及び、各Unitの稼働率を表�
 
 githubからDownload可能なService Centerでは以下のURLでアクセス可能である。
 
-http://127.0.0.1:8000/static/ui\_example/staff/availability.html
+http://127.0.0.1:8000/static/ui_example/staff/availability.html
 
 ![](media/media/image9.png)  
 図4-6
@@ -216,7 +216,7 @@ DEALは電力融通履歴を表示する。日付\<例 : ”2020-01-01” \>を�
 
 githubからDownload可能なService Centerでは以下のURLでアクセス可能である。
 
-http://127.0.0.1:8000/static/ui\_example/staff/deal.html
+http://127.0.0.1:8000/static/ui_example/staff/deal.html
 
 ![](media/media/image11.png)  
 ![](media/media/image12.png)  
@@ -289,7 +289,7 @@ http://127.0.0.1:8000/static/ui_example/staff/monitoring.html
 
 githubからDownload可能なService Centerでは以下のURLでアクセス可能である。
 
-http://127.0.0.1:8000/static/ui\_example/resident/visual.html
+http://127.0.0.1:8000/static/ui_example/resident/visual.html
 
 ![](media/media/image20.png)  
 図4-16
@@ -298,7 +298,7 @@ http://127.0.0.1:8000/static/ui\_example/resident/visual.html
 
 ユーザ用のDEALは自Unitの電力融通履歴を表示する。日付　\<例 : ”2020-01-01” \>を入力し”aggregate” ボタンを押下することで図4-17に示すように入力した日に発生した全Unitの電力融通情報を時間毎に棒線で表示する。折れ線は該当Unitの全融通期間の平均である。githubからDownload可能なService Centerでは以下のURLでアクセス可能である。
 
-http://127.0.0.1:8000/static/ui\_example/resident/deal.html
+http://127.0.0.1:8000/static/ui_example/resident/deal.html
 
 ![](media/media/image21.png)  
 図4-17
@@ -321,7 +321,7 @@ Summaryの下にある“detail”ボタンを押下することでより図4-18
 
 githubからDownload可能なService Centerでは以下のURLでアクセス可能である。
 
-http://127.0.0.1:8000/static/ui\_example/resident/scenario.html
+http://127.0.0.1:8000/static/ui_example/resident/scenario.html
 
 ![](media/media/image24.png)  
 図4-20
@@ -1266,7 +1266,7 @@ Name : 自由に入力する。
 障害一覧を参照したい場合は”MONITORING” の “Job settings”を選択すると以下の画面が表示される。  
 こちらは登録されている死活監視や障害検知などのJob機能のON/OFFを設定する。  
 以下でアクセスできるON/OFF機能と同等である。  
-http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
+http://127.0.0.1:8000/static/ui_example/staff/monitoring.html
 
 ![](media/media/image34.png)  
 図6-9
@@ -2362,7 +2362,7 @@ githubのサンプルはhttp://127.0.0.1:8000/の後にWeb APIのURLを追加す
 <tr class="odd">
 <td>unit_data_fetch_limit</td>
 <td>1000</td>
-<td>interval\_sec毎に集計する際に一度に取得するUnit Dataの上限</td>
+<td>interval_sec毎に集計する際に一度に取得するUnit Dataの上限</td>
 </tr>
 <tr class="even">
 <td>data_loss_tolerance_sec</td>
