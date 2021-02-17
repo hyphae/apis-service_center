@@ -154,7 +154,7 @@ VISUAL displays the energy sharing information and status of each unit in real t
 
 The Service Center example can be downloaded from GitHub using the following URL.
 
-http://127.0.0.1:8000/static/ui\_example/staff/visual.html
+http://127.0.0.1:8000/static/ui_example/staff/visual.html
 
 ![](media/media/image8.png)  
 Figure 4-5
@@ -169,7 +169,7 @@ Entering a time period, such as \<“2020-01-01” – “2020-01-07”\>, and c
 
 The Service Center example can be downloaded from GitHub using the following URL.
 
-http://127.0.0.1:8000/static/ui\_example/staff/availability.html
+http://127.0.0.1:8000/static/ui_example/staff/availability.html
 
 ![](media/media/image9.png)  
 Figure 4-6
@@ -212,7 +212,7 @@ MONITORING displays the on/off screen for the alive monitoring and failure detec
 
 The Service Center example can be downloaded from GitHub using the following URL.
 
-http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
+http://127.0.0.1:8000/static/ui_example/staff/monitoring.html
 
 ![](media/media/image15.png)  
 Figure 4-11
@@ -261,7 +261,7 @@ For users, VISUAL displays the energy sharing information and status of only the
 
 The Service Center example can be downloaded from GitHub using the following URL.
 
-http://127.0.0.1:8000/static/ui\_example/resident/visual.html
+http://127.0.0.1:8000/static/ui_example/resident/visual.html
 
 ![](media/media/image20.png)  
 Figure 4-16
@@ -274,7 +274,7 @@ For the user, DEAL displays the energy sharing history. When a date (E.g.: ”20
 
 The Service Center example can be downloaded from GitHub using the following URL.
 
-http://127.0.0.1:8000/static/ui\_example/resident/deal.html
+http://127.0.0.1:8000/static/ui_example/resident/deal.html
 
 ![](media/media/image21.png)  
 Figure 4-17  
@@ -297,7 +297,7 @@ SCENARIO enables the user to change the action rules that determine the behavior
 
 The Service Center example can be downloaded from GitHub using the following URL.
 
-http://127.0.0.1:8000/static/ui\_example/resident/scenario.html
+http://127.0.0.1:8000/static/ui_example/resident/scenario.html
 
 ![](media/media/image24.png)  
 Figure 4-20
@@ -1252,7 +1252,7 @@ Figure 6-8
 <br>
 To display a list of failures, select “Job settings” under “MONITORING” to bring up the screen shown below, which enables you to set registered job functions such as alive processing and failure detection on or off. This is the same as the ON/OFF function that can be accessed at the following URL.  
 
-http://127.0.0.1:8000/static/ui\_example/staff/monitoring.html
+http://127.0.0.1:8000/static/ui_example/staff/monitoring.html
 
 ![](media/media/image34.png)  
 Figure 6-9
