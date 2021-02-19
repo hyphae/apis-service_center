@@ -12,7 +12,7 @@ Here is how to install apis-service_center individually.
 apis-ccc, apis-log and mongdb are required.
 
 ```bash
-$ git clone https://github.com/SonyCSL/apis-service_center.git
+$ git clone https://github.com/hyphae/apis-service_center.git
 $ cd apis-service_enter
 $ sh venv.sh
 $ sh initdb.sh
@@ -42,12 +42,12 @@ $ deactivate
 
 <a id="anchor1"></a>
 ## Documentation
-&emsp;[apis-service_center_specification(EN)](https://github.com/SonyCSL/apis-service_center/blob/main/doc/en/apis-service_center_specification_EN.md)  
-&emsp;[apis-service_center_specification(JP)](https://github.com/SonyCSL/apis-service_center/blob/main/doc/jp/apis-service_center_specification_JP.md)
+&emsp;[apis-service_center_specification(EN)](https://github.com/hyphae/apis-service_center/blob/main/doc/en/apis-service_center_specification_EN.md)  
+&emsp;[apis-service_center_specification(JP)](https://github.com/hyphae/apis-service_center/blob/main/doc/jp/apis-service_center_specification_JP.md)
 
 ## License
-&emsp;[Apache License Version 2.0](https://github.com/SonyCSL/apis-service_center/blob/main/LICENSE)
+&emsp;[Apache License Version 2.0](https://github.com/hyphae/apis-service_center/blob/main/LICENSE)
 
 
 ## Notice
-&emsp;[Notice](https://github.com/SonyCSL/apis-service_center/blob/main/NOTICE.md)
+&emsp;[Notice](https://github.com/hyphae/apis-service_center/blob/main/NOTICE.md)
