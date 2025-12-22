@@ -1,4 +1,5 @@
 # apis-service_center
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/hyphae/apis-service_center/badge)](https://scorecard.dev/viewer/?uri=github.com/hyphae/apis-service_center)
 
 ## Introduction
 
