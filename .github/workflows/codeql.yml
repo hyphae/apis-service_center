@@ -1,0 +1,46 @@
+# CodeQL static analysis for SAST (Static Application Security Testing).
+
+name: "CodeQL"
+
+on:
+  # Scan every commit pushed to main.
+  push:
+    branches: [ "main" ]
+  # Scan pull requests before merging to catch vulnerabilities early.
+  pull_request:
+    # The branches below must be a subset of the branches above.
+    branches: [ "main" ]
+  # Weekly scan every Monday at 03:25 UTC.
+  schedule:
+    - cron: '25 3 * * 1'
+
+# Declare default permissions as read only (principle of least privilege).
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read  # for github/codeql-action/init to get workflow details
+      contents: read  # for actions/checkout to fetch code
+      security-events: write  # for github/codeql-action/analyze to upload results
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'python', 'javascript' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # pin@v6.0.2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@f3a6ee42055dd5f618fb31d987aae7b94518f043 # pin@v4.32.2
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@f3a6ee42055dd5f618fb31d987aae7b94518f043 # pin@v4.32.2
+        with:
+          category: "/language:${{ matrix.language }}"
