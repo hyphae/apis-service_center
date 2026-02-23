@@ -10,4 +10,6 @@ fi
 $PYTHON -m venv venv
 . venv/bin/activate
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install --upgrade pip-tools
+pip-compile --generate-hashes requirements.in -o requirements.txt
+pip install --require-hashes -r requirements.txt
