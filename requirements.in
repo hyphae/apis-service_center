@@ -1,4 +1,4 @@
-Django==6.0.2
+Django==6.0.3
 pymongo==4.16.0
 python-dateutil==2.9.0.post0
 pytz==2025.2
