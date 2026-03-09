@@ -1,5 +1,6 @@
 # apis-service_center
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/hyphae/apis-service_center/badge)](https://scorecard.dev/viewer/?uri=github.com/hyphae/apis-service_center)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/11905/badge)](https://www.bestpractices.dev/projects/11905)
 
 ## Introduction
 
@@ -14,7 +15,7 @@ apis-ccc, apis-log and mongdb are required.
 
 ```bash
 $ git clone https://github.com/hyphae/apis-service_center.git
-$ cd apis-service_enter
+$ cd apis-service_center
 $ sh venv.sh
 $ sh initdb.sh
 $ deactivate
@@ -40,6 +41,14 @@ $ cd apis-service_center
 $ bash stop.sh
 $ deactivate
 ```
+
+## Dependency Management
+
+All Python dependencies are pinned by SHA-256 hash for supply-chain security.
+
+To update dependencies:
+1. Edit `requirements.in` with the new versions
+2. Run `sh venv.sh` to regenerate `requirements.txt` with updated hashes and install
 
 <a id="anchor1"></a>
 ## Documentation

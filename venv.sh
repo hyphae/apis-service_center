@@ -9,5 +9,7 @@ fi
 
 $PYTHON -m venv venv
 . venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+pip install --upgrade pip==26.0.1
+pip install --upgrade pip-tools==7.5.3
+pip-compile --generate-hashes requirements.in -o requirements.txt
+pip install --require-hashes -r requirements.txt
