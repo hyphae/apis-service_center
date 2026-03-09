@@ -1,6 +1,6 @@
 Django==6.0.3
 pymongo==4.16.0
 python-dateutil==2.9.0.post0
-pytz==2025.2
+pytz==2026.1.post1
 six==1.17.0
 sqlparse==0.5.5
