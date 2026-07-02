@@ -1,19 +1,16 @@
 #!/usr/bin/env bash
-echo 'call stop.sh'
 
-get_pids() {
- ps -f -U $(whoami) | grep 'uv run manage.py runserver' | grep -v grep | awk '{print $2}' | tr '\n' ' '
- done
-}
+set -e
 
-while true; do
- _PIDS_=`get_pids`
- if [ -z "$_PIDS_" ] ; then
-  break
- fi
- echo kill $_PIDS_
- kill $_PIDS_
- sleep 1
-done
+echo "Stopping emulator..."
 
-echo '... done'
+PIDS=$(pgrep -f "manage.py.*runserver" || true)
+
+if [ -z "$PIDS" ]; then
+    echo "No emulator running."
+    exit 0
+fi
+
+echo "$PIDS" | xargs kill
+
+echo "Stopped."
