@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
+echo 'call stop.sh'
 
-set -e
+get_pids() {
+ ps -f -U $(whoami) | grep 'uv run manage.py runserver' | grep -v grep | awk '{print $2}' | tr '\n' ' '
+ done
+}
 
-PORT=8000
+while true; do
+ _PIDS_=`get_pids`
+ if [ -z "$_PIDS_" ] ; then
+  break
+ fi
+ echo kill $_PIDS_
+ kill $_PIDS_
+ sleep 1
+done
 
-echo "Stopping Django server..."
-
-PIDS=$(lsof -ti tcp:${PORT} || true)
-
-if [ -z "$PIDS" ]; then
-    echo "No server running."
-    exit 0
-fi
-
-echo "$PIDS" | xargs kill
-
-echo "Stopped."
+echo '... done'

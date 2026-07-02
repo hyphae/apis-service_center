@@ -16,9 +16,8 @@ apis-ccc, apis-log and mongdb are required.
 ```bash
 $ git clone https://github.com/hyphae/apis-service_center.git
 $ cd apis-service_center
-$ sh venv.sh
-$ sh initdb.sh
-$ deactivate
+$ sh scripts/venv.sh
+$ sh scripts/initdb.sh
 ```
 
 ## Running
@@ -27,7 +26,7 @@ Here is how to run apis-service_center individually.
 
 ```bash
 $ cd apis-service_center
-$ sh start.sh
+$ sh scripts/start.sh
 ```
 http://127.0.0.1:8000/static/ui_example/staff/visual.html  
 account/password = admin/admin
@@ -38,8 +37,7 @@ Here is how to stop apis-service_center individually.
 
 ```bash
 $ cd apis-service_center
-$ bash stop.sh
-$ deactivate
+$ sh scripts/stop.sh
 ```
 
 ## Dependency Management
@@ -47,8 +45,9 @@ $ deactivate
 All Python dependencies are pinned by SHA-256 hash for supply-chain security.
 
 To update dependencies:
-1. Edit `requirements.in` with the new versions
-2. Run `sh venv.sh` to regenerate `requirements.txt` with updated hashes and install
+1. `UV` Dependecny Management is used here, so easily use `uv` for managing dependencies.
+2. To add a new_dependency, `uv add new_dependency`.
+3. Also it is possible to change the python version, current one is Python `3.12`.
 
 <a id="anchor1"></a>
 ## Documentation
