@@ -1,0 +1,21 @@
+[project]
+name = "apis-service-center"
+version = "4.5.10"
+description = "APIS Service Center"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "Django==6.0.3",
+    "pymongo==4.16.0",
+    "python-dateutil==2.9.0.post0",
+]
+
+[dependency-groups]
+dev = [
+    "ipython",
+    "ruff",
+]
+
+[tool.uv]
+package = false
