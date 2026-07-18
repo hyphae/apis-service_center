@@ -16,6 +16,9 @@ apis-ccc, apis-log and mongdb are required.
 ```bash
 $ git clone https://github.com/hyphae/apis-service_center.git
 $ cd apis-service_center
+# install UV for virtual environment management if not already installed
+$ bash scripts/install-uv.sh
+# if already installed, then just install dependencies
 $ bash scripts/venv.sh
 $ bash scripts/initdb.sh
 ```
